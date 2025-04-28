@@ -3,4 +3,5 @@ import Testing
 @testable
 import GildedRose
 
-@Test func example() async throws {}
+@Suite("GildedRose")
+final class GildedRoseTests {}

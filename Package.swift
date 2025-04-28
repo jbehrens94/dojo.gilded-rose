@@ -12,7 +12,10 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "GildedRose"
+            name: "GildedRose",
+            plugins: [
+                .plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")
+            ]
         ),
 
         .executableTarget(
