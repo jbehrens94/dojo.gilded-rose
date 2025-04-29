@@ -20,7 +20,7 @@ public class GildedRose {
                 if items[i].quality < 50 {
                     increaseQuality(item: item)
 
-                    if items[i].name == "Backstage passes to a TAFKAL80ETC concert" {
+                    if isBackstagePasses(item: item) {
                         if items[i].sellIn < 11 {
                             if items[i].quality < 50 {
                                 increaseQuality(item: item)
@@ -40,7 +40,7 @@ public class GildedRose {
 
             if items[i].sellIn < 0 {
                 if !isAgedBrie(item: item) {
-                    if items[i].name != "Backstage passes to a TAFKAL80ETC concert" {
+                    if !isBackstagePasses(item: item) {
                         if items[i].quality > 0 {
                             decreaseQuality(item: item)
                         }
