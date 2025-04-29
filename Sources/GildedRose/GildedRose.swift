@@ -5,11 +5,9 @@ public class GildedRose {
         self.items = items
     }
 
-    // swiftlint:disable identifier_name shorthand_operator cyclomatic_complexity
+    // swiftlint:disable shorthand_operator cyclomatic_complexity
     public func updateQuality() {
-        for i in 0 ..< items.count {
-            let item = items[i]
-
+        items.forEach { item in
             guard !isSulfuras(item: item) else { return }
 
             if !isAgedBrie(item: item) && !isBackstagePasses(item: item) {
@@ -103,5 +101,5 @@ public class GildedRose {
     private func decreaseSellIn(item: Item) {
         item.sellIn = item.sellIn - 1
     }
-    // swiftlint:enable identifier_name shorthand_operator cyclomatic_complexity
+    // swiftlint:enable shorthand_operator cyclomatic_complexity
 }
