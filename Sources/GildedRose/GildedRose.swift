@@ -27,7 +27,7 @@ public class GildedRose {
                             }
                         }
 
-                        if items[i].sellIn < 6 {
+                        if isSellInFiveAtMost(item: item) {
                             if isQualityBelowFifty(item: item) {
                                 increaseQuality(item: item)
                             }
@@ -78,6 +78,10 @@ public class GildedRose {
 
     private func isSellInNegative(item: Item) -> Bool {
         item.sellIn < 0
+    }
+
+    private func isSellInFiveAtMost(item: Item) -> Bool {
+        item.sellIn < 6
     }
 
     private func isSellInTenAtMost(item: Item) -> Bool {
