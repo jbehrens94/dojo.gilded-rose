@@ -17,18 +17,18 @@ public class GildedRose {
                     decreaseQuality(item: item)
                 }
             } else {
-                if items[i].quality < 50 {
+                if isQualityBelowFifty(item: item) {
                     increaseQuality(item: item)
 
                     if isBackstagePasses(item: item) {
                         if items[i].sellIn < 11 {
-                            if items[i].quality < 50 {
+                            if isQualityBelowFifty(item: item) {
                                 increaseQuality(item: item)
                             }
                         }
 
                         if items[i].sellIn < 6 {
-                            if items[i].quality < 50 {
+                            if isQualityBelowFifty(item: item) {
                                 increaseQuality(item: item)
                             }
                         }
@@ -48,7 +48,7 @@ public class GildedRose {
                         items[i].quality = items[i].quality - items[i].quality
                     }
                 } else {
-                    if items[i].quality < 50 {
+                    if isQualityBelowFifty(item: item) {
                         increaseQuality(item: item)
                     }
                 }
@@ -71,6 +71,11 @@ public class GildedRose {
     private func isQualityPositive(item: Item) -> Bool {
         item.quality > 0
     }
+
+    private func isQualityBelowFifty(item: Item) -> Bool {
+        item.quality < 50
+    }
+
     private func decreaseQuality(item: Item) {
         item.quality = item.quality - 1
     }
