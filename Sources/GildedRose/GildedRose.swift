@@ -13,7 +13,7 @@ public class GildedRose {
             guard !isSulfuras(item: item) else { return }
 
             if !isAgedBrie(item: item) && !isBackstagePasses(item: item) {
-                if items[i].quality > 0 {
+                if isQualityPositive(item: item) {
                     decreaseQuality(item: item)
                 }
             } else {
@@ -41,7 +41,7 @@ public class GildedRose {
             if items[i].sellIn < 0 {
                 if !isAgedBrie(item: item) {
                     if !isBackstagePasses(item: item) {
-                        if items[i].quality > 0 {
+                        if isQualityPositive(item: item) {
                             decreaseQuality(item: item)
                         }
                     } else {
@@ -68,6 +68,9 @@ public class GildedRose {
         item.name == "Sulfuras, Hand of Ragnaros"
     }
 
+    private func isQualityPositive(item: Item) -> Bool {
+        item.quality > 0
+    }
     private func decreaseQuality(item: Item) {
         item.quality = item.quality - 1
     }
