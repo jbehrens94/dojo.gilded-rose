@@ -18,18 +18,18 @@ public class GildedRose {
                 }
             } else {
                 if items[i].quality < 50 {
-                    items[i].quality = items[i].quality + 1
+                    increaseQuality(item: item)
 
                     if items[i].name == "Backstage passes to a TAFKAL80ETC concert" {
                         if items[i].sellIn < 11 {
                             if items[i].quality < 50 {
-                                items[i].quality = items[i].quality + 1
+                                increaseQuality(item: item)
                             }
                         }
 
                         if items[i].sellIn < 6 {
                             if items[i].quality < 50 {
-                                items[i].quality = items[i].quality + 1
+                                increaseQuality(item: item)
                             }
                         }
                     }
@@ -49,7 +49,8 @@ public class GildedRose {
                     }
                 } else {
                     if items[i].quality < 50 {
-                        items[i].quality = items[i].quality + 1
+                        increaseQuality(item: item)
+                    }
                     }
                 }
             }
@@ -58,6 +59,10 @@ public class GildedRose {
 
     fileprivate func isSulfuras(item: Item) -> Bool {
         item.name == "Sulfuras, Hand of Ragnaros"
+    }
+
+    private func increaseQuality(item: Item) {
+        item.quality = item.quality + 1
     }
 
     private func decreaseSellIn(item: Item) {
