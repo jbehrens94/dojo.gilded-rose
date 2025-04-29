@@ -51,10 +51,10 @@ public class GildedRose {
                     if items[i].quality < 50 {
                         increaseQuality(item: item)
                     }
-                    }
                 }
             }
         }
+    }
 
     private func isAgedBrie(item: Item) -> Bool {
         item.name == "Aged Brie"
@@ -64,7 +64,7 @@ public class GildedRose {
         item.name == "Backstage passes to a TAFKAL80ETC concert"
     }
 
-    fileprivate func isSulfuras(item: Item) -> Bool {
+    private func isSulfuras(item: Item) -> Bool {
         item.name == "Sulfuras, Hand of Ragnaros"
     }
 
