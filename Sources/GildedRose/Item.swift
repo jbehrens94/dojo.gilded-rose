@@ -8,6 +8,12 @@ public class Item {
         self.sellIn = sellIn
         self.quality = quality
     }
+
+    public func decreaseQuality() {
+        if quality > 0 {
+            quality -= 1
+        }
+    }
 }
 
 extension Item: CustomStringConvertible {
