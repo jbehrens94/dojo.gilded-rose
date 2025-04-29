@@ -8,6 +8,10 @@ public class GildedRose {
     // swiftlint:disable identifier_name shorthand_operator cyclomatic_complexity
     public func updateQuality() {
         for i in 0 ..< items.count {
+            let item = items[i]
+
+            guard !isSulfuras(item: item) else { return }
+
             if items[i].name != "Aged Brie" && items[i].name != "Backstage passes to a TAFKAL80ETC concert" {
                 if items[i].quality > 0 {
                     if items[i].name != "Sulfuras, Hand of Ragnaros" {
@@ -34,9 +38,7 @@ public class GildedRose {
                 }
             }
 
-            if items[i].name != "Sulfuras, Hand of Ragnaros" {
-                items[i].sellIn = items[i].sellIn - 1
-            }
+            decreaseSellIn(item: item)
 
             if items[i].sellIn < 0 {
                 if items[i].name != "Aged Brie" {
@@ -56,6 +58,14 @@ public class GildedRose {
                 }
             }
         }
+    }
+
+    fileprivate func isSulfuras(item: Item) -> Bool {
+        item.name == "Sulfuras, Hand of Ragnaros"
+    }
+
+    private func decreaseSellIn(item: Item) {
+        item.sellIn = item.sellIn - 1
     }
     // swiftlint:enable identifier_name shorthand_operator cyclomatic_complexity
 }
