@@ -14,6 +14,12 @@ public class Item {
             quality -= 1
         }
     }
+
+    public func increaseQuality() {
+        if quality < 50 {
+            quality += 1
+        }
+    }
 }
 
 extension Item: CustomStringConvertible {

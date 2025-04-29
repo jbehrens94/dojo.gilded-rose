@@ -5,7 +5,6 @@ public class GildedRose {
         self.items = items
     }
 
-    // swiftlint:disable cyclomatic_complexity
     public func updateQuality() {
         items.forEach { item in
             guard !isSulfuras(item: item) else { return }
@@ -13,21 +12,15 @@ public class GildedRose {
             if !isAgedBrie(item: item) && !isBackstagePasses(item: item) {
                 item.decreaseQuality()
             } else {
-                if isQualityBelowFifty(item: item) {
-                    increaseQuality(item: item)
+                item.increaseQuality()
 
-                    if isBackstagePasses(item: item) {
-                        if isSellInTenAtMost(item: item) {
-                            if isQualityBelowFifty(item: item) {
-                                increaseQuality(item: item)
-                            }
-                        }
+                if isBackstagePasses(item: item) {
+                    if isSellInTenAtMost(item: item) {
+                        item.increaseQuality()
+                    }
 
-                        if isSellInFiveAtMost(item: item) {
-                            if isQualityBelowFifty(item: item) {
-                                increaseQuality(item: item)
-                            }
-                        }
+                    if isSellInFiveAtMost(item: item) {
+                        item.increaseQuality()
                     }
                 }
             }
@@ -42,9 +35,7 @@ public class GildedRose {
                         setQualityToZero(item: item)
                     }
                 } else {
-                    if isQualityBelowFifty(item: item) {
-                        increaseQuality(item: item)
-                    }
+                    item.increaseQuality()
                 }
             }
         }
@@ -60,10 +51,6 @@ public class GildedRose {
 
     private func isSulfuras(item: Item) -> Bool {
         item.name == "Sulfuras, Hand of Ragnaros"
-    }
-
-    private func isQualityBelowFifty(item: Item) -> Bool {
-        item.quality < 50
     }
 
     private func isSellInNegative(item: Item) -> Bool {
@@ -82,12 +69,7 @@ public class GildedRose {
         item.quality -= item.quality
     }
 
-    private func increaseQuality(item: Item) {
-        item.quality += 1
-    }
-
     private func decreaseSellIn(item: Item) {
         item.sellIn -= 1
     }
-    // swiftlint:enable cyclomatic_complexity
 }
