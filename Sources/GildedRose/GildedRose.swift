@@ -39,7 +39,7 @@ public class GildedRose {
             decreaseSellIn(item: item)
 
             if items[i].sellIn < 0 {
-                if items[i].name != "Aged Brie" {
+                if !isAgedBrie(item: item) {
                     if items[i].name != "Backstage passes to a TAFKAL80ETC concert" {
                         if items[i].quality > 0 {
                             decreaseQuality(item: item)
@@ -55,6 +55,10 @@ public class GildedRose {
                 }
             }
         }
+
+    private func isAgedBrie(item: Item) -> Bool {
+        item.name == "Aged Brie"
+    }
     }
 
     fileprivate func isSulfuras(item: Item) -> Bool {
