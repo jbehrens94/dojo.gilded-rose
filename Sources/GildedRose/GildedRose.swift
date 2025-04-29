@@ -21,7 +21,7 @@ public class GildedRose {
                     increaseQuality(item: item)
 
                     if isBackstagePasses(item: item) {
-                        if items[i].sellIn < 11 {
+                        if isSellInTenAtMost(item: item) {
                             if isQualityBelowFifty(item: item) {
                                 increaseQuality(item: item)
                             }
@@ -80,6 +80,9 @@ public class GildedRose {
         item.sellIn < 0
     }
 
+    private func isSellInTenAtMost(item: Item) -> Bool {
+        item.sellIn < 11
+    }
     private func decreaseQuality(item: Item) {
         item.quality = item.quality - 1
     }
