@@ -12,7 +12,7 @@ public class GildedRose {
 
             guard !isSulfuras(item: item) else { return }
 
-            if items[i].name != "Aged Brie" && items[i].name != "Backstage passes to a TAFKAL80ETC concert" {
+            if !isAgedBrie(item: item) && !isBackstagePasses(item: item) {
                 if items[i].quality > 0 {
                     decreaseQuality(item: item)
                 }
@@ -59,6 +59,9 @@ public class GildedRose {
     private func isAgedBrie(item: Item) -> Bool {
         item.name == "Aged Brie"
     }
+
+    private func isBackstagePasses(item: Item) -> Bool {
+        item.name == "Backstage passes to a TAFKAL80ETC concert"
     }
 
     fileprivate func isSulfuras(item: Item) -> Bool {
