@@ -38,7 +38,7 @@ public class GildedRose {
 
             decreaseSellIn(item: item)
 
-            if items[i].sellIn < 0 {
+            if isSellInNegative(item: item) {
                 if !isAgedBrie(item: item) {
                     if !isBackstagePasses(item: item) {
                         if isQualityPositive(item: item) {
@@ -74,6 +74,10 @@ public class GildedRose {
 
     private func isQualityBelowFifty(item: Item) -> Bool {
         item.quality < 50
+    }
+
+    private func isSellInNegative(item: Item) -> Bool {
+        item.sellIn < 0
     }
 
     private func decreaseQuality(item: Item) {
