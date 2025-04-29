@@ -15,9 +15,9 @@ public class Item {
         }
     }
 
-    public func increaseQuality() {
+    public func increaseQuality(by number: Int) {
         if quality < 50 {
-            quality += 1
+            quality += number
         }
     }
 

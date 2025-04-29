@@ -12,15 +12,15 @@ public class GildedRose {
             if !isAgedBrie(item: item) && !isBackstagePasses(item: item) {
                 item.decreaseQuality()
             } else {
-                item.increaseQuality()
+                item.increaseQuality(by: 1)
 
                 if isBackstagePasses(item: item) {
                     if isSellInTenAtMost(item: item) {
-                        item.increaseQuality()
+                        item.increaseQuality(by: 1)
                     }
 
                     if isSellInFiveAtMost(item: item) {
-                        item.increaseQuality()
+                        item.increaseQuality(by: 1)
                     }
                 }
             }
@@ -35,7 +35,7 @@ public class GildedRose {
                         item.setQualityToMinimum()
                     }
                 } else {
-                    item.increaseQuality()
+                    item.increaseQuality(by: 1)
                 }
             }
         }
