@@ -45,7 +45,7 @@ public class GildedRose {
                             decreaseQuality(item: item)
                         }
                     } else {
-                        items[i].quality = items[i].quality - items[i].quality
+                        setQualityToZero(item: item)
                     }
                 } else {
                     if isQualityBelowFifty(item: item) {
@@ -87,6 +87,11 @@ public class GildedRose {
     private func isSellInTenAtMost(item: Item) -> Bool {
         item.sellIn < 11
     }
+
+    private func setQualityToZero(item: Item) {
+        item.quality = item.quality - item.quality
+    }
+
     private func decreaseQuality(item: Item) {
         item.quality = item.quality - 1
     }
