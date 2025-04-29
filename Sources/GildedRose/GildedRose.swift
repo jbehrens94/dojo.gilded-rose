@@ -32,7 +32,7 @@ public class GildedRose {
                     if !isBackstagePasses(item: item) {
                         item.decreaseQuality()
                     } else {
-                        setQualityToZero(item: item)
+                        item.setQualityToMinimum()
                     }
                 } else {
                     item.increaseQuality()
@@ -63,10 +63,6 @@ public class GildedRose {
 
     private func isSellInTenAtMost(item: Item) -> Bool {
         item.sellIn < 11
-    }
-
-    private func setQualityToZero(item: Item) {
-        item.quality -= item.quality
     }
 
     private func decreaseSellIn(item: Item) {

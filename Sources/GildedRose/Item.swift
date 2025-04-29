@@ -20,6 +20,10 @@ public class Item {
             quality += 1
         }
     }
+
+    public func setQualityToMinimum() {
+        quality = 0
+    }
 }
 
 extension Item: CustomStringConvertible {
