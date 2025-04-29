@@ -5,7 +5,7 @@ public class GildedRose {
         self.items = items
     }
 
-    // swiftlint:disable shorthand_operator cyclomatic_complexity
+    // swiftlint:disable cyclomatic_complexity
     public func updateQuality() {
         items.forEach { item in
             guard !isSulfuras(item: item) else { return }
@@ -87,19 +87,19 @@ public class GildedRose {
     }
 
     private func setQualityToZero(item: Item) {
-        item.quality = item.quality - item.quality
+        item.quality -= item.quality
     }
 
     private func decreaseQuality(item: Item) {
-        item.quality = item.quality - 1
+        item.quality -= 1
     }
 
     private func increaseQuality(item: Item) {
-        item.quality = item.quality + 1
+        item.quality += 1
     }
 
     private func decreaseSellIn(item: Item) {
-        item.sellIn = item.sellIn - 1
+        item.sellIn -= 1
     }
-    // swiftlint:enable shorthand_operator cyclomatic_complexity
+    // swiftlint:enable cyclomatic_complexity
 }
