@@ -54,18 +54,18 @@ public class GildedRose {
     }
 
     private func isSellInNegative(item: Item) -> Bool {
-        item.sellIn < 0
+        item.state.sellIn < 0
     }
 
     private func isSellInFiveAtMost(item: Item) -> Bool {
-        item.sellIn < 6
+        item.state.sellIn < 6
     }
 
     private func isSellInTenAtMost(item: Item) -> Bool {
-        item.sellIn < 11
+        item.state.sellIn < 11
     }
 
     private func decreaseSellIn(item: Item) {
-        item.sellIn -= 1
+        item.state.sellIn -= 1
     }
 }

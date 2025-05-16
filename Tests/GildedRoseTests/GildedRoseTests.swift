@@ -11,8 +11,8 @@ struct GildedRoseTests {
         let app = GildedRose(items: items)
         app.updateQuality()
 
-        #expect(items[0].sellIn == 9)
-        #expect(items[0].quality == 19)
+        #expect(items[0].state.sellIn == 9)
+        #expect(items[0].state.quality == 19)
     }
 
     @Test
@@ -21,8 +21,8 @@ struct GildedRoseTests {
         let app = GildedRose(items: items)
         app.updateQuality()
 
-        #expect(items[0].sellIn == -1)
-        #expect(items[0].quality == 8)
+        #expect(items[0].state.sellIn == -1)
+        #expect(items[0].state.quality == 8)
     }
 
     @Test
@@ -31,8 +31,8 @@ struct GildedRoseTests {
         let app = GildedRose(items: items)
         app.updateQuality()
 
-        #expect(items[0].sellIn == 1)
-        #expect(items[0].quality == 1)
+        #expect(items[0].state.sellIn == 1)
+        #expect(items[0].state.quality == 1)
     }
 
     @Test
@@ -42,8 +42,8 @@ struct GildedRoseTests {
         app.updateQuality()
         app.updateQuality()
 
-        #expect(items[0].sellIn == 0)
-        #expect(items[0].quality == 2)
+        #expect(items[0].state.sellIn == 0)
+        #expect(items[0].state.quality == 2)
     }
 
     @Test
@@ -52,7 +52,7 @@ struct GildedRoseTests {
         let app = GildedRose(items: items)
         app.updateQuality()
 
-        #expect(items[0].quality == 50)
+        #expect(items[0].state.quality == 50)
     }
 
     @Test
@@ -61,8 +61,8 @@ struct GildedRoseTests {
         let app = GildedRose(items: items)
         app.updateQuality()
 
-        #expect(items[0].sellIn == 4)
-        #expect(items[0].quality == 6)
+        #expect(items[0].state.sellIn == 4)
+        #expect(items[0].state.quality == 6)
     }
 
     @Test
@@ -71,8 +71,8 @@ struct GildedRoseTests {
         let app = GildedRose(items: items)
         app.updateQuality()
 
-        #expect(items[0].sellIn == -1)
-        #expect(items[0].quality == 5)
+        #expect(items[0].state.sellIn == -1)
+        #expect(items[0].state.quality == 5)
     }
 
     @Test
@@ -81,8 +81,8 @@ struct GildedRoseTests {
         let app = GildedRose(items: items)
         app.updateQuality()
 
-        #expect(items[0].sellIn == 0)
-        #expect(items[0].quality == 80)
+        #expect(items[0].state.sellIn == 0)
+        #expect(items[0].state.quality == 80)
     }
 
     @Test
@@ -91,8 +91,8 @@ struct GildedRoseTests {
         let app = GildedRose(items: items)
         app.updateQuality()
 
-        #expect(items[0].sellIn == -1)
-        #expect(items[0].quality == 80)
+        #expect(items[0].state.sellIn == -1)
+        #expect(items[0].state.quality == 80)
     }
 
     @Test
@@ -101,8 +101,8 @@ struct GildedRoseTests {
         let app = GildedRose(items: items)
         app.updateQuality()
 
-        #expect(items[0].sellIn == 19)
-        #expect(items[0].quality == 11)
+        #expect(items[0].state.sellIn == 19)
+        #expect(items[0].state.quality == 11)
     }
 
     @Test
@@ -111,8 +111,8 @@ struct GildedRoseTests {
         let app = GildedRose(items: items)
         app.updateQuality()
 
-        #expect(items[0].sellIn == 9)
-        #expect(items[0].quality == 12)
+        #expect(items[0].state.sellIn == 9)
+        #expect(items[0].state.quality == 12)
     }
 
     @Test
@@ -121,8 +121,8 @@ struct GildedRoseTests {
         let app = GildedRose(items: items)
         app.updateQuality()
 
-        #expect(items[0].sellIn == 4)
-        #expect(items[0].quality == 13)
+        #expect(items[0].state.sellIn == 4)
+        #expect(items[0].state.quality == 13)
     }
 
     @Test
@@ -131,7 +131,7 @@ struct GildedRoseTests {
         let app = GildedRose(items: items)
         app.updateQuality()
 
-        #expect(items[0].sellIn == -1)
-        #expect(items[0].quality == 0)
+        #expect(items[0].state.sellIn == -1)
+        #expect(items[0].state.quality == 0)
     }
 }
