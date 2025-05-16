@@ -25,7 +25,7 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-TEMPLATE="projectName"
+TEMPLATE="_projectName_"
 NEW_NAME="$1"
 
 # Rename directories if necessary
@@ -39,5 +39,6 @@ find . -type f -name "*.swift" -exec rename -i "s|$TEMPLATE|$NEW_NAME|g" {} +
 find . -type f -name "*.swift" -exec sed -i '' "s/$TEMPLATE/$NEW_NAME/g" {} +
 find . -type f -name "README.md" -exec sed -i '' "s/$TEMPLATE/$NEW_NAME/g" {} +
 find . -type f -name "sonar-project.properties" -exec sed -i '' "s/$TEMPLATE/$NEW_NAME/g" {} +
+find . -type f -name "ci.yml" -exec sed -i '' "s/$TEMPLATE/$NEW_NAME/g" {} +
 
 echo "Project renamed from $TEMPLATE to $NEW_NAME"
